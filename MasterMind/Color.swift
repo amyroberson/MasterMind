@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Color : Int, Equatable{
+enum Color : Int {
     case violet = 0
     case pink = 1
     case blue = 2
@@ -17,12 +17,13 @@ enum Color : Int, Equatable{
     case yellow = 5
     case orange = 6
     case navy = 7
-    case white = 8
-    case black = 9
+    case black = 8
+    case white = 9
+   
     //case base will be backgroundColor or close
     
     
-    static func < (_ lhs: Color, _ rhs: Color) -> Bool { // test this
+    static func < (_ lhs: Color, _ rhs: Color) -> Bool {
         return lhs.rawValue < rhs.rawValue
     }
 }

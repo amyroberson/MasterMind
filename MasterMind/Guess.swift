@@ -21,7 +21,7 @@ class Guess {
         }
     }
     
-    func evaluateGuess(code: CodeSet) -> Bool{
+    func evaluate(code: CodeSet) -> Bool{
         if self.codeSet == code {
             pinSet = [.black, .black, .black, .black]
             return true

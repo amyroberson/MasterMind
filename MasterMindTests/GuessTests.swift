@@ -35,7 +35,7 @@ class GuessTests: XCTestCase {
         XCTAssertNotNil(code)
         XCTAssertNotNil(guess1)
         let pins = (guess1?.createPins(code!))!
-        let expected: [Color] = [.white, .black, .black]
+        let expected: [Color] = [.black, .black, .white]
         XCTAssertEqual(pins, expected)
     }
     
@@ -75,7 +75,7 @@ class GuessTests: XCTestCase {
     func testevaluateGuess(){
         let guess1 = Guess(codeSet: CodeSet(slot1: Slot(color: .blue), slot2: Slot(color: .pink), slot3: Slot(color: .peach), slot4: Slot(color: .mint))!)
         let code = CodeSet(slot1: Slot(color: .black), slot2: Slot(color:.white), slot3: Slot(color: .orange), slot4: Slot(color: .violet))
-        let result = guess1?.evaluateGuess(code: code!)
+        let result = guess1?.evaluate(code: code!)
         let expected = false
         XCTAssertEqual(result, expected)
     }
@@ -83,7 +83,7 @@ class GuessTests: XCTestCase {
     func testevaluateGuess1(){
         let guess1 = Guess(codeSet: CodeSet(slot1: Slot(color: .blue), slot2: Slot(color: .pink), slot3: Slot(color: .peach), slot4: Slot(color: .mint))!)
         let code = CodeSet(slot1: Slot(color: .blue), slot2: Slot(color:.pink), slot3: Slot(color: .peach), slot4: Slot(color: .mint))
-        let result = guess1?.evaluateGuess(code: code!)
+        let result = guess1?.evaluate(code: code!)
         let expected = true
         XCTAssertEqual(result, expected)
     }
