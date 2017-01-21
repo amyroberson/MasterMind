@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E18009D61E31400200FF87D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18009D51E31400200FF87D5 /* AppDelegate.swift */; };
-		E18009D81E31400200FF87D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18009D71E31400200FF87D5 /* ViewController.swift */; };
+		E18009D81E31400200FF87D5 /* MasterMindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18009D71E31400200FF87D5 /* MasterMindViewController.swift */; };
 		E18009DB1E31400200FF87D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18009D91E31400200FF87D5 /* Main.storyboard */; };
 		E18009DD1E31400200FF87D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E18009DC1E31400200FF87D5 /* Assets.xcassets */; };
 		E18009E01E31400200FF87D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18009DE1E31400200FF87D5 /* LaunchScreen.storyboard */; };
@@ -22,6 +22,7 @@
 		E1800A101E3156BB00FF87D5 /* CodeSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1800A0F1E3156BB00FF87D5 /* CodeSetTests.swift */; };
 		E1BE69111E3166E9008BC80E /* GuessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BE69101E3166E9008BC80E /* GuessTests.swift */; };
 		E1BE69131E316DB0008BC80E /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BE69121E316DB0008BC80E /* ColorTests.swift */; };
+		E1BE69151E32A75C008BC80E /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BE69141E32A75C008BC80E /* RowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +45,7 @@
 /* Begin PBXFileReference section */
 		E18009D21E31400200FF87D5 /* MasterMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18009D51E31400200FF87D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E18009D71E31400200FF87D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E18009D71E31400200FF87D5 /* MasterMindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterMindViewController.swift; sourceTree = "<group>"; };
 		E18009DA1E31400200FF87D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E18009DC1E31400200FF87D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E18009DF1E31400200FF87D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		E1800A0F1E3156BB00FF87D5 /* CodeSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeSetTests.swift; sourceTree = "<group>"; };
 		E1BE69101E3166E9008BC80E /* GuessTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessTests.swift; sourceTree = "<group>"; };
 		E1BE69121E316DB0008BC80E /* ColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
+		E1BE69141E32A75C008BC80E /* RowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				E18009D51E31400200FF87D5 /* AppDelegate.swift */,
-				E18009D71E31400200FF87D5 /* ViewController.swift */,
+				E18009D71E31400200FF87D5 /* MasterMindViewController.swift */,
+				E1BE69141E32A75C008BC80E /* RowView.swift */,
 				E18009D91E31400200FF87D5 /* Main.storyboard */,
 				E1800A031E314EBD00FF87D5 /* Model */,
 				E18009DC1E31400200FF87D5 /* Assets.xcassets */,
@@ -294,8 +297,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E18009D81E31400200FF87D5 /* ViewController.swift in Sources */,
+				E18009D81E31400200FF87D5 /* MasterMindViewController.swift in Sources */,
 				E18009D61E31400200FF87D5 /* AppDelegate.swift in Sources */,
+				E1BE69151E32A75C008BC80E /* RowView.swift in Sources */,
 				E1800A051E314F1200FF87D5 /* Color.swift in Sources */,
 				E1800A091E314F2D00FF87D5 /* CodeSet.swift in Sources */,
 				E1800A071E314F1F00FF87D5 /* Slot.swift in Sources */,

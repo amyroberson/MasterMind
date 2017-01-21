@@ -87,4 +87,15 @@ class GuessTests: XCTestCase {
         let expected = true
         XCTAssertEqual(result, expected)
     }
+    
+    //MARK: random
+    
+    func testRandom(){
+        let code = CodeSet.random()
+        XCTAssertNotNil(code)
+        let code1 = CodeSet.random()
+        XCTAssertNotNil(code1)
+        let code2 = CodeSet.random()
+        XCTAssertNotNil(code2)
+    }
 }
