@@ -18,6 +18,24 @@ class RowView: UIView {
     var pin2Label = UILabel()
     var pin3Label = UILabel()
     var pin4Label = UILabel()
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: (self.superview?.frame.size.width) ?? 375, height: 60)
+    }
+    
+    required override init(frame: CGRect){
+        super.init(frame: frame)
+        //self.frame.size.height = 60
+        //self.frame.size.width = (self.superview?.frame.size.width) ?? 375
+        self.buttonSetUp()
+        self.labelsSetUp()
+        self.addItems()
+        //self.layer.backgroundColor = UIColor.cyan.cgColor
+        self.areAllInteractable() //initializes to false
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
     func buttonSetUp(){
         slot1Button.layer.cornerRadius = 20
@@ -48,9 +66,9 @@ class RowView: UIView {
         pin3Label.layer.backgroundColor = UIColor.gray.cgColor
         pin4Label.layer.backgroundColor = UIColor.gray.cgColor
         pin1Label.frame = CGRect(x: 235, y: 18, width: 24, height: 24)
-        pin1Label.frame = CGRect(x: 269, y: 18, width: 24, height: 24)
-        pin1Label.frame = CGRect(x: 303, y: 18, width: 24, height: 24)
-        pin1Label.frame = CGRect(x: 337, y: 18, width: 24, height: 24)
+        pin2Label.frame = CGRect(x: 269, y: 18, width: 24, height: 24)
+        pin3Label.frame = CGRect(x: 303, y: 18, width: 24, height: 24)
+        pin4Label.frame = CGRect(x: 337, y: 18, width: 24, height: 24)
     }
     
     func addItems(){
@@ -77,15 +95,6 @@ class RowView: UIView {
         switchInteractable(object: slot2Button)
         switchInteractable(object: slot3Button)
         switchInteractable(object: slot4Button)
-    }
-    
-    func initializeView(){
-        self.frame.size.height = 60
-        self.frame.size.width = (self.superview?.frame.size.width) ?? 375
-        self.buttonSetUp()
-        self.labelsSetUp()
-        self.addItems()
-        self.areAllInteractable() //initializes to false
     }
    
 }
