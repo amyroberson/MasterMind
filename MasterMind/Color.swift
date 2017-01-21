@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Color : Int {
+enum Color : Int, Hashable {
     case violet = 0
     case pink = 1
     case blue = 2
@@ -25,6 +25,10 @@ enum Color : Int {
     
     static func < (_ lhs: Color, _ rhs: Color) -> Bool {
         return lhs.rawValue < rhs.rawValue
+    }
+    
+    var hashValue: Int {
+        return rawValue.hashValue
     }
 }
 

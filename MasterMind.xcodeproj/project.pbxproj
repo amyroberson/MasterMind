@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1285DB11E33E1DB00C4F877 /* ColorPickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1285DB01E33E1DB00C4F877 /* ColorPickViewController.swift */; };
 		E18009D61E31400200FF87D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18009D51E31400200FF87D5 /* AppDelegate.swift */; };
 		E18009D81E31400200FF87D5 /* MasterMindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18009D71E31400200FF87D5 /* MasterMindViewController.swift */; };
 		E18009DB1E31400200FF87D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18009D91E31400200FF87D5 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E1285DB01E33E1DB00C4F877 /* ColorPickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickViewController.swift; sourceTree = "<group>"; };
 		E18009D21E31400200FF87D5 /* MasterMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18009D51E31400200FF87D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E18009D71E31400200FF87D5 /* MasterMindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterMindViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				E18009D51E31400200FF87D5 /* AppDelegate.swift */,
 				E18009D71E31400200FF87D5 /* MasterMindViewController.swift */,
 				E1BE69141E32A75C008BC80E /* RowView.swift */,
+				E1285DB01E33E1DB00C4F877 /* ColorPickViewController.swift */,
 				E18009D91E31400200FF87D5 /* Main.storyboard */,
 				E1800A031E314EBD00FF87D5 /* Model */,
 				E18009DC1E31400200FF87D5 /* Assets.xcassets */,
@@ -302,6 +305,7 @@
 				E1BE69151E32A75C008BC80E /* RowView.swift in Sources */,
 				E1800A051E314F1200FF87D5 /* Color.swift in Sources */,
 				E1800A091E314F2D00FF87D5 /* CodeSet.swift in Sources */,
+				E1285DB11E33E1DB00C4F877 /* ColorPickViewController.swift in Sources */,
 				E1800A071E314F1F00FF87D5 /* Slot.swift in Sources */,
 				E1800A0B1E314F4800FF87D5 /* Guess.swift in Sources */,
 			);

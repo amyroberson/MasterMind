@@ -96,5 +96,12 @@ class RowView: UIView {
         switchInteractable(object: slot3Button)
         switchInteractable(object: slot4Button)
     }
+    
+    func updateAllButtonColors(color: CGColor){
+        slot1Button.layer.backgroundColor = color
+        slot2Button.layer.backgroundColor = color
+        slot3Button.layer.backgroundColor = color
+        slot4Button.layer.backgroundColor = color
+    }
    
 }
