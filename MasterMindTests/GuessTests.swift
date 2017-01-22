@@ -25,7 +25,7 @@ class GuessTests: XCTestCase {
         XCTAssertNotNil(code)
         XCTAssertNotNil(guess1)
         let pins = (guess1?.createPins(code!))!
-        let expected: [Color] = [.white, .white, .white]
+        let expected: [Color] = [.white, .white, .white, .lightGrey]
         XCTAssertEqual(pins, expected)
     }
     
@@ -35,7 +35,7 @@ class GuessTests: XCTestCase {
         XCTAssertNotNil(code)
         XCTAssertNotNil(guess1)
         let pins = (guess1?.createPins(code!))!
-        let expected: [Color] = [.black, .black, .white]
+        let expected: [Color] = [.black, .black, .white, .lightGrey]
         XCTAssertEqual(pins, expected)
     }
     
@@ -65,7 +65,7 @@ class GuessTests: XCTestCase {
         XCTAssertNotNil(code)
         XCTAssertNotNil(guess1)
         let pins = (guess1?.createPins(code!))!
-        let expected: [Color] = []
+        let expected: [Color] = [.lightGrey, .lightGrey, .lightGrey, .lightGrey]
         XCTAssertEqual(pins, expected)
     }
     

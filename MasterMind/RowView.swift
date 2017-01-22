@@ -18,18 +18,17 @@ class RowView: UIView {
     var pin2Label = UILabel()
     var pin3Label = UILabel()
     var pin4Label = UILabel()
+    var colorsSelected: [CGColor] = []
     override var intrinsicContentSize: CGSize {
         return CGSize(width: (self.superview?.frame.size.width) ?? 375, height: 60)
     }
     
     required override init(frame: CGRect){
         super.init(frame: frame)
-        //self.frame.size.height = 60
-        //self.frame.size.width = (self.superview?.frame.size.width) ?? 375
         self.buttonSetUp()
         self.labelsSetUp()
         self.addItems()
-        //self.layer.backgroundColor = UIColor.cyan.cgColor
+        self.layer.backgroundColor = UIColor(red: 237/255, green: 215/255, blue: 242/255, alpha: 1.0).cgColor
         self.areAllInteractable() //initializes to false
     }
     
@@ -83,10 +82,10 @@ class RowView: UIView {
     }
     
     func switchInteractable(object: UIButton){
-        if isUserInteractionEnabled {
-            self.isUserInteractionEnabled = false
+        if object.isUserInteractionEnabled {
+            object.isUserInteractionEnabled = false
         } else {
-            self.isUserInteractionEnabled = true
+            object.isUserInteractionEnabled = true
         }
     }
     

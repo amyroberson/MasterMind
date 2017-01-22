@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum Color : Int, Hashable {
     case violet = 0
@@ -16,9 +17,11 @@ enum Color : Int, Hashable {
     case mint = 4
     case yellow = 5
     case orange = 6
-    case navy = 7
+    case purple = 7
     case black = 8
     case white = 9
+    case darkGrey = 10
+    case lightGrey = 11
    
     //case base will be backgroundColor or close
     
@@ -30,5 +33,36 @@ enum Color : Int, Hashable {
     var hashValue: Int {
         return rawValue.hashValue
     }
+    var color: CGColor {
+        switch self{
+        case .violet:
+            return UIColor(colorLiteralRed: 189.0/255, green: 153.0/255, blue: 1.0, alpha: 1).cgColor
+        case .pink:
+            return UIColor(colorLiteralRed: 242.0/255, green: 121.0/255, blue: 199.0/255, alpha: 1).cgColor
+        case .blue:
+            return UIColor(colorLiteralRed: 73.0/255, green: 101.0/255, blue: 238.0/255, alpha: 1).cgColor
+        case .peach:
+            return UIColor(colorLiteralRed: 240.0/255, green: 209.0/255, blue: 143.0/255, alpha: 1).cgColor
+        case .mint:
+            return UIColor(colorLiteralRed: 144.0/255, green: 243.0/255, blue: 221.0/255, alpha: 1).cgColor
+        case .yellow:
+            return UIColor(colorLiteralRed: 255.0/255, green: 254.0/255, blue: 144.0/255, alpha: 1).cgColor
+        case .orange:
+            return UIColor(colorLiteralRed: 241.0/255, green: 141.0/255, blue: 80.0/255, alpha: 1).cgColor
+        case .purple:
+            return UIColor(colorLiteralRed: 136.0/255, green: 53.0/255, blue: 243.0/255, alpha: 1).cgColor
+        case .black:
+            return UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 1).cgColor
+        case .white:
+            return UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 1).cgColor
+        case .darkGrey:
+            return UIColor.darkGray.cgColor
+        case .lightGrey:
+            return UIColor.lightGray.cgColor
+            
+        }
+    }
+    
+    
 }
 

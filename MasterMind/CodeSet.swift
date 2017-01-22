@@ -36,7 +36,7 @@ struct CodeSet : Equatable{
     }
     
     static  func random() -> CodeSet{
-        var colors: [Color] = [Color.blue, Color.mint, Color.navy, Color.orange, Color.peach, Color.pink, Color.violet, Color.yellow]
+        var colors: [Color] = [Color.blue, Color.mint, Color.purple, Color.orange, Color.peach, Color.pink, Color.violet, Color.yellow]
         var selected: [Slot] = []
         while selected.count < 4{
             let random = Int(arc4random_uniform(UInt32(colors.count)))

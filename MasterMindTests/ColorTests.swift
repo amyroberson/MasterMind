@@ -16,7 +16,7 @@ class ColorTests: XCTestCase {
         let color2: Color = .pink
         let color3: Color = .blue
         let color4: Color = .peach
-        let color5: Color = .navy
+        let color5: Color = .purple
         let color6: Color = .black
         XCTAssertTrue(color1 < color6)
         XCTAssertTrue(color2 < color5)
