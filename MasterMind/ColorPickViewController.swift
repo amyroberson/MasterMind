@@ -14,13 +14,13 @@ class ColorPickViewController: UIViewController {
     
     var activeView: RowView?
     var activeButton: UIButton?
-    var tempColor: CGColor?
-    var colorsSelected: [CGColor] {
-        var array: [CGColor] = []
-        array.append((activeView?.slot1Button.layer.backgroundColor)!)
-        array.append((activeView?.slot2Button.layer.backgroundColor)!)
-        array.append((activeView?.slot3Button.layer.backgroundColor)!)
-        array.append((activeView?.slot4Button.layer.backgroundColor)!)
+    var tempColor: UIColor?
+    var colorsSelected: [UIColor] {
+        var array: [UIColor] = []
+        array.append((activeView?.slot1Button.backgroundColor)!)
+        array.append((activeView?.slot2Button.backgroundColor)!)
+        array.append((activeView?.slot3Button.backgroundColor)!)
+        array.append((activeView?.slot4Button.backgroundColor)!)
         return array
     }
     
@@ -35,7 +35,7 @@ class ColorPickViewController: UIViewController {
     @IBOutlet weak var eigthColorButton: UIButton!
 
     @IBAction func cancelButton(_ sender: UIButton) {
-        activeButton?.layer.backgroundColor = tempColor
+        activeButton?.backgroundColor = tempColor
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -43,28 +43,21 @@ class ColorPickViewController: UIViewController {
     @IBAction func colorSelected(_ sender: UIButton) {
         switch sender {
         case firstColorButton:
-            activeButton?.layer.backgroundColor = firstColorButton.layer.backgroundColor
+            activeButton?.backgroundColor = firstColorButton.backgroundColor
         case secondColorButton:
-            //colorsSelected.append(.pink)
-            activeButton?.layer.backgroundColor = secondColorButton.layer.backgroundColor
+            activeButton?.backgroundColor = secondColorButton.backgroundColor
         case thirdColorButton:
-            //colorsSelected.append(.blue)
-            activeButton?.layer.backgroundColor = thirdColorButton.layer.backgroundColor
+            activeButton?.backgroundColor = thirdColorButton.backgroundColor
         case fourthColorButton:
-            //colorsSelected.append(.peach)
-            activeButton?.layer.backgroundColor = fourthColorButton.layer.backgroundColor
+            activeButton?.backgroundColor = fourthColorButton.backgroundColor
         case fifthColorButton:
-            //colorsSelected.append(.mint)
-            activeButton?.layer.backgroundColor = fifthColorButton.layer.backgroundColor
+            activeButton?.backgroundColor = fifthColorButton.backgroundColor
         case sixthColorButton:
-            //colorsSelected.append(.yellow)
-            activeButton?.layer.backgroundColor = sixthColorButton.layer.backgroundColor
+            activeButton?.backgroundColor = sixthColorButton.backgroundColor
         case seventhColorButton:
-            //colorsSelected.append(.orange)
-            activeButton?.layer.backgroundColor = seventhColorButton.layer.backgroundColor
+            activeButton?.backgroundColor = seventhColorButton.backgroundColor
         case eigthColorButton:
-            //colorsSelected.append(.purple)
-            activeButton?.layer.backgroundColor = eigthColorButton.layer.backgroundColor
+            activeButton?.backgroundColor = eigthColorButton.backgroundColor
         default:
             return
         }
@@ -76,33 +69,33 @@ class ColorPickViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViewStyle()
-        tempColor = activeButton?.layer.backgroundColor
-        activeButton?.layer.backgroundColor = UIColor.lightGray.cgColor
+        tempColor = activeButton?.backgroundColor
+        activeButton?.backgroundColor = UIColor.lightGray
         for color in colorsSelected{
-            if color == firstColorButton.layer.backgroundColor {
+            if color == firstColorButton.backgroundColor {
                 firstColorButton.isUserInteractionEnabled = false
-                firstColorButton.layer.backgroundColor = UIColor.lightGray.cgColor
-            } else if color == secondColorButton.layer.backgroundColor {
+                firstColorButton.backgroundColor = UIColor.lightGray
+            } else if color == secondColorButton.backgroundColor {
                 secondColorButton.isUserInteractionEnabled = false
-                secondColorButton.layer.backgroundColor = UIColor.lightGray.cgColor
-            } else if color == thirdColorButton.layer.backgroundColor {
+                secondColorButton.backgroundColor = UIColor.lightGray
+            } else if color == thirdColorButton.backgroundColor {
                 thirdColorButton.isUserInteractionEnabled = false
-                thirdColorButton.layer.backgroundColor = UIColor.lightGray.cgColor
-            } else if color == fourthColorButton.layer.backgroundColor {
+                thirdColorButton.backgroundColor = UIColor.lightGray
+            } else if color == fourthColorButton.backgroundColor {
                 fourthColorButton.isUserInteractionEnabled = false
-                fourthColorButton.layer.backgroundColor = UIColor.lightGray.cgColor
-            } else if color == fifthColorButton.layer.backgroundColor {
+                fourthColorButton.backgroundColor = UIColor.lightGray
+            } else if color == fifthColorButton.backgroundColor {
                 fifthColorButton.isUserInteractionEnabled = false
-                fifthColorButton.layer.backgroundColor = UIColor.lightGray.cgColor
-            } else if color == sixthColorButton.layer.backgroundColor {
+                fifthColorButton.backgroundColor = UIColor.lightGray
+            } else if color == sixthColorButton.backgroundColor {
                 sixthColorButton.isUserInteractionEnabled = false
-                sixthColorButton.layer.backgroundColor = UIColor.lightGray.cgColor
-            } else if color == seventhColorButton.layer.backgroundColor {
+                sixthColorButton.backgroundColor = UIColor.lightGray
+            } else if color == seventhColorButton.backgroundColor {
                 seventhColorButton.isUserInteractionEnabled = false
-                seventhColorButton.layer.backgroundColor = UIColor.lightGray.cgColor
-            } else if color == eigthColorButton.layer.backgroundColor {
+                seventhColorButton.backgroundColor = UIColor.lightGray
+            } else if color == eigthColorButton.backgroundColor {
                 eigthColorButton.isUserInteractionEnabled = false
-                eigthColorButton.layer.backgroundColor = UIColor.lightGray.cgColor
+                eigthColorButton.backgroundColor = UIColor.lightGray
             }
         }
         
@@ -110,24 +103,25 @@ class ColorPickViewController: UIViewController {
 
     func setUpViewStyle(){
         pickColorLabel.layer.cornerRadius = 10
-        pickColorLabel.layer.backgroundColor = UIColor(red: 102/255, green: 104/255, blue: 104/255, alpha: 1.0).cgColor
+        pickColorLabel.backgroundColor = UIColor(red: 102/255, green: 104/255, blue: 104/255, alpha: 1.0)
+        pickColorLabel.layer.masksToBounds = true
         innerView.layer.cornerRadius = 20
         firstColorButton.layer.cornerRadius = 20
-        firstColorButton.layer.backgroundColor = Color.violet.color
+        firstColorButton.backgroundColor = Color.violet.color
         secondColorButton.layer.cornerRadius = 20
-        secondColorButton.layer.backgroundColor = Color.pink.color
+        secondColorButton.backgroundColor = Color.pink.color
         thirdColorButton.layer.cornerRadius = 20
-        thirdColorButton.layer.backgroundColor = Color.blue.color
+        thirdColorButton.backgroundColor = Color.blue.color
         fourthColorButton.layer.cornerRadius = 20
-        fourthColorButton.layer.backgroundColor = Color.peach.color
+        fourthColorButton.backgroundColor = Color.peach.color
         fifthColorButton.layer.cornerRadius = 20
-        fifthColorButton.layer.backgroundColor = Color.mint.color
+        fifthColorButton.backgroundColor = Color.mint.color
         sixthColorButton.layer.cornerRadius = 20
-        sixthColorButton.layer.backgroundColor = Color.yellow.color
+        sixthColorButton.backgroundColor = Color.yellow.color
         seventhColorButton.layer.cornerRadius = 20
-        seventhColorButton.layer.backgroundColor = Color.orange.color
+        seventhColorButton.backgroundColor = Color.orange.color
         eigthColorButton.layer.cornerRadius = 20
-        eigthColorButton.layer.backgroundColor = Color.purple.color
+        eigthColorButton.backgroundColor = Color.purple.color
     }
 
 }

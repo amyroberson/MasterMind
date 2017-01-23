@@ -43,19 +43,19 @@ class GameStatusViewController: UIViewController {
         wonOrLostLabel.layer.masksToBounds = true
         slot1Label.layer.cornerRadius = 20
         slot1Label.layer.masksToBounds = true
-        slot1Label.backgroundColor = UIColor(cgColor: (slot1?.color.color)!)
+        slot1Label.backgroundColor = (slot1?.color.color)!
         slot2Label.layer.cornerRadius = 20
         slot2Label.layer.masksToBounds = true
-        slot2Label.backgroundColor = UIColor(cgColor: (slot2?.color.color)!)
+        slot2Label.backgroundColor = (slot2?.color.color)!
         slot3Label.layer.cornerRadius = 20
         slot3Label.layer.masksToBounds = true
-        slot3Label.backgroundColor = UIColor(cgColor: (slot3?.color.color)!)
+        slot3Label.backgroundColor = (slot3?.color.color)!
         slot4Label.layer.cornerRadius = 20
         slot4Label.layer.masksToBounds = true
-        slot4Label.backgroundColor = UIColor(cgColor: (slot4?.color.color)!)
+        slot4Label.backgroundColor = (slot4?.color.color)!
         playAgainButton.layer.cornerRadius = 18
         if (delegate?.guess?.evaluate(code:  (delegate?.codeToMatch)!))! {
-            wonOrLostLabel.text = "   You Won!   "
+            wonOrLostLabel.text = "You Won!"
         } else {
             wonOrLostLabel.text = "You lost"
         }

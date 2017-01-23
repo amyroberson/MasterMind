@@ -13,7 +13,7 @@ class MasterMindViewController: UIViewController, GameStatusViewControllerDelega
     var codeToMatch: CodeSet = CodeSet.random()
     var rowViews: [RowView] = []
     var activeRow: RowView? = nil
-    var colorArray: [CGColor] = []
+    var colorArray: [UIColor] = []
     var guess: Guess?
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     var gameStatusVC: GameStatusViewController?
@@ -32,21 +32,21 @@ class MasterMindViewController: UIViewController, GameStatusViewControllerDelega
         var colors: [Color] = []
         for color in colorArray{
             switch color{
-            case UIColor(colorLiteralRed: 189.0/255, green: 153.0/255, blue: 1.0, alpha: 1).cgColor:
+            case UIColor(colorLiteralRed: 189.0/255, green: 153.0/255, blue: 1.0, alpha: 1):
                 colors.append(.violet)
-            case UIColor(colorLiteralRed: 242.0/255, green: 121.0/255, blue: 199.0/255, alpha: 1).cgColor:
+            case UIColor(colorLiteralRed: 242.0/255, green: 121.0/255, blue: 199.0/255, alpha: 1):
                 colors.append(.pink)
-            case UIColor(colorLiteralRed: 73.0/255, green: 101.0/255, blue: 238.0/255, alpha: 1).cgColor:
+            case UIColor(colorLiteralRed: 73.0/255, green: 101.0/255, blue: 238.0/255, alpha: 1):
                 colors.append(.blue)
-            case UIColor(colorLiteralRed: 240.0/255, green: 209.0/255, blue: 143.0/255, alpha: 1).cgColor:
+            case UIColor(colorLiteralRed: 240.0/255, green: 209.0/255, blue: 143.0/255, alpha: 1):
                 colors.append(.peach)
-            case UIColor(colorLiteralRed: 144.0/255, green: 243.0/255, blue: 221.0/255, alpha: 1).cgColor:
+            case UIColor(colorLiteralRed: 144.0/255, green: 243.0/255, blue: 221.0/255, alpha: 1):
                 colors.append(.mint)
-            case UIColor(colorLiteralRed: 255.0/255, green: 254.0/255, blue: 144.0/255, alpha: 1).cgColor:
+            case UIColor(colorLiteralRed: 255.0/255, green: 254.0/255, blue: 144.0/255, alpha: 1):
                 colors.append(.yellow)
-            case UIColor(colorLiteralRed: 241.0/255, green: 141.0/255, blue: 80.0/255, alpha: 1).cgColor:
+            case UIColor(colorLiteralRed: 241.0/255, green: 141.0/255, blue: 80.0/255, alpha: 1):
                 colors.append(.orange)
-            case UIColor(colorLiteralRed: 136.0/255, green: 53.0/255, blue: 243.0/255, alpha: 1).cgColor:
+            case UIColor(colorLiteralRed: 136.0/255, green: 53.0/255, blue: 243.0/255, alpha: 1):
                 colors.append(.purple)
             default:
                 return
@@ -59,10 +59,10 @@ class MasterMindViewController: UIViewController, GameStatusViewControllerDelega
                 present(gameStatusVC!, animated: true, completion: nil)
         } else {
             let pins = guess?.createPins(codeToMatch)
-            activeRow?.pin1Label.layer.backgroundColor = pins?[0].color
-            activeRow?.pin2Label.layer.backgroundColor = pins?[1].color
-            activeRow?.pin3Label.layer.backgroundColor = pins?[2].color
-            activeRow?.pin4Label.layer.backgroundColor = pins?[3].color
+            activeRow?.pin1Label.backgroundColor = pins?[0].color
+            activeRow?.pin2Label.backgroundColor = pins?[1].color
+            activeRow?.pin3Label.backgroundColor = pins?[2].color
+            activeRow?.pin4Label.backgroundColor = pins?[3].color
             if activeIndex <= 0 {
                 present(gameStatusVC!, animated: true, completion: nil)
             } else {
@@ -99,10 +99,10 @@ class MasterMindViewController: UIViewController, GameStatusViewControllerDelega
         guess = nil
         for row in rowViews {
             row.updateAllButtonColors(color: Color.darkGrey.color)
-            row.pin1Label.layer.backgroundColor = UIColor.gray.cgColor
-            row.pin2Label.layer.backgroundColor = UIColor.gray.cgColor
-            row.pin3Label.layer.backgroundColor = UIColor.gray.cgColor
-            row.pin4Label.layer.backgroundColor = UIColor.gray.cgColor
+            row.pin1Label.backgroundColor = UIColor.gray
+            row.pin2Label.backgroundColor = UIColor.gray
+            row.pin3Label.backgroundColor = UIColor.gray
+            row.pin4Label.backgroundColor = UIColor.gray
         }
         self.setActiveRow()
     }
@@ -138,7 +138,7 @@ class MasterMindViewController: UIViewController, GameStatusViewControllerDelega
     //update userIneraction, and color
     func setActiveRow(){
         activeRow?.areAllInteractable()
-        activeRow?.updateAllButtonColors(color: UIColor.lightGray.cgColor)
+        activeRow?.updateAllButtonColors(color: UIColor.lightGray)
         
     }
     
