@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MasterMindViewController: UIViewController, GameStatusViewControllerDelegate {
+class MasterMindViewController: UIViewController, GameStatusViewControllerDelegate, ColorPickerViewControllerDelegate {
 
     var codeToMatch: CodeSet = CodeSet.random()
     var rowViews: [RowView] = []
@@ -18,17 +18,26 @@ class MasterMindViewController: UIViewController, GameStatusViewControllerDelega
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     var gameStatusVC: GameStatusViewController?
     var activeIndex: Int = 0
-
+    var selectedColor: UIColor? {
+        didSet {
+            lastActiveButton?.backgroundColor = selectedColor
+        }
+    }
+    var lastActiveButton: UIButton?
+    
+    
     @IBOutlet weak var rowViewStack: UIStackView!
     @IBOutlet weak var masterMindLabel: UILabel!
     @IBOutlet weak var guessButton: UIButton!
     
     
     //creates a guess object and evaluates it to the codeToMatch displays the wining view or the next guessview
-    //make this class a delegate to the win/lose screen
     @IBAction func guessButtonTapped(_ sender: UIButton) {
-        colorArray = (activeRow?.colorsSelected) ?? []
-        guard colorArray.count == 4 else { return }
+        colorArray = [(activeRow?.slot1Button.backgroundColor)!,
+                       (activeRow?.slot2Button.backgroundColor)!,
+                       (activeRow?.slot3Button.backgroundColor)!,
+                       (activeRow?.slot4Button.backgroundColor)!]
+        guard !colorArray.contains(UIColor.lightGray) else { return }
         var colors: [Color] = []
         for color in colorArray{
             switch color{
@@ -113,9 +122,11 @@ class MasterMindViewController: UIViewController, GameStatusViewControllerDelega
     func colorButtonPressed(_ sender: UIButton){
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let colorPickVC: ColorPickViewController = storyBoard.instantiateViewController(withIdentifier: "ColorPicker") as! ColorPickViewController
-        colorPickVC.activeView = self.activeRow
+        colorPickVC.delegate = self
+        //colorPickVC.activeView = self.activeRow
         colorPickVC.activeButton = sender
         self.present(colorPickVC, animated: true, completion: nil)
+        lastActiveButton = sender
     }
 
     func displayStacks(){

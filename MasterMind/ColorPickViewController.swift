@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol ColorPickerViewControllerDelegate {
+    var activeRow: RowView? {get}
+    var selectedColor: UIColor? {get set}
+}
+
 class ColorPickViewController: UIViewController {
 
     @IBOutlet weak var innerView: UIView!
-    
+    var delegate: ColorPickerViewControllerDelegate?
     var activeView: RowView?
     var activeButton: UIButton?
     var tempColor: UIColor?
@@ -43,25 +48,25 @@ class ColorPickViewController: UIViewController {
     @IBAction func colorSelected(_ sender: UIButton) {
         switch sender {
         case firstColorButton:
-            activeButton?.backgroundColor = firstColorButton.backgroundColor
+            delegate?.selectedColor = firstColorButton.backgroundColor
         case secondColorButton:
-            activeButton?.backgroundColor = secondColorButton.backgroundColor
+            delegate?.selectedColor = secondColorButton.backgroundColor
         case thirdColorButton:
-            activeButton?.backgroundColor = thirdColorButton.backgroundColor
+            delegate?.selectedColor = thirdColorButton.backgroundColor
         case fourthColorButton:
-            activeButton?.backgroundColor = fourthColorButton.backgroundColor
+            delegate?.selectedColor = fourthColorButton.backgroundColor
         case fifthColorButton:
-            activeButton?.backgroundColor = fifthColorButton.backgroundColor
+            delegate?.selectedColor = fifthColorButton.backgroundColor
         case sixthColorButton:
-            activeButton?.backgroundColor = sixthColorButton.backgroundColor
+            delegate?.selectedColor = sixthColorButton.backgroundColor
         case seventhColorButton:
-            activeButton?.backgroundColor = seventhColorButton.backgroundColor
+            delegate?.selectedColor = seventhColorButton.backgroundColor
         case eigthColorButton:
-            activeButton?.backgroundColor = eigthColorButton.backgroundColor
+            delegate?.selectedColor = eigthColorButton.backgroundColor
         default:
             return
         }
-        activeView?.colorsSelected = self.colorsSelected
+        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -69,6 +74,7 @@ class ColorPickViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViewStyle()
+        activeView = delegate?.activeRow
         tempColor = activeButton?.backgroundColor
         activeButton?.backgroundColor = UIColor.lightGray
         for color in colorsSelected{

@@ -18,7 +18,7 @@ class RowView: UIView {
     var pin2Label = UILabel()
     var pin3Label = UILabel()
     var pin4Label = UILabel()
-    var colorsSelected: [UIColor] = []
+    //var colorsSelected: [UIColor] = []
     override var intrinsicContentSize: CGSize {
         return CGSize(width: (self.superview?.frame.size.width) ?? 375, height: 60)
     }
